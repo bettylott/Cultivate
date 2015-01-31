@@ -16,6 +16,7 @@
 		F89267011A75F39F007AA055 /* Cultivate_TableTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F89267001A75F39F007AA055 /* Cultivate_TableTests.m */; };
 		F892670D1A75F5A5007AA055 /* Entry.m in Sources */ = {isa = PBXBuildFile; fileRef = F892670C1A75F5A5007AA055 /* Entry.m */; };
 		F89267111A75F88C007AA055 /* EntrySvcCache.m in Sources */ = {isa = PBXBuildFile; fileRef = F89267101A75F88C007AA055 /* EntrySvcCache.m */; };
+		F8A8FDFC1A7C80E500B25407 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F8A8FDFB1A7C80E500B25407 /* SecondViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,8 @@
 		F892670E1A75F7B8007AA055 /* EntrySvc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EntrySvc.h; sourceTree = "<group>"; };
 		F892670F1A75F88C007AA055 /* EntrySvcCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EntrySvcCache.h; sourceTree = "<group>"; };
 		F89267101A75F88C007AA055 /* EntrySvcCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EntrySvcCache.m; sourceTree = "<group>"; };
+		F8A8FDFA1A7C80E500B25407 /* SecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
+		F8A8FDFB1A7C80E500B25407 /* SecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +96,8 @@
 				F89266E91A75F39F007AA055 /* AppDelegate.m */,
 				F89266EB1A75F39F007AA055 /* ViewController.h */,
 				F89266EC1A75F39F007AA055 /* ViewController.m */,
+				F8A8FDFA1A7C80E500B25407 /* SecondViewController.h */,
+				F8A8FDFB1A7C80E500B25407 /* SecondViewController.m */,
 				F89266EE1A75F39F007AA055 /* Main.storyboard */,
 				F89266F11A75F39F007AA055 /* Images.xcassets */,
 				F89266F31A75F39F007AA055 /* LaunchScreen.xib */,
@@ -239,6 +244,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F8A8FDFC1A7C80E500B25407 /* SecondViewController.m in Sources */,
 				F892670D1A75F5A5007AA055 /* Entry.m in Sources */,
 				F89266ED1A75F39F007AA055 /* ViewController.m in Sources */,
 				F89266EA1A75F39F007AA055 /* AppDelegate.m in Sources */,
@@ -434,6 +440,7 @@
 				F89267061A75F39F007AA055 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F89267071A75F39F007AA055 /* Build configuration list for PBXNativeTarget "Cultivate-TableTests" */ = {
 			isa = XCConfigurationList;
@@ -442,6 +449,7 @@
 				F89267091A75F39F007AA055 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

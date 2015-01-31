@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SecondViewController.h"
 
-@interface ViewController : UIViewController<UITableViewDelegate, UITableViewDataSource>
+@interface ViewController : UIViewController
 
 @property (weak, nonatomic) IBOutlet UITextField *type;
 @property (weak, nonatomic) IBOutlet UITextField *hours;

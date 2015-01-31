@@ -10,6 +10,7 @@
 
 #import "Entry.h"
 #import "EntrySvcCache.h"
+#import "EntrySvcCache.m"
 
 @interface ViewController ()
 
@@ -18,6 +19,7 @@
 @implementation ViewController
 
 EntrySvcCache *entrySvc = nil;
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -50,24 +52,21 @@ EntrySvcCache *entrySvc = nil;
     NSLog (@"deleteEntry");
     
     [self.view endEditing:YES];
+    
 }
 
--(NSInteger)tableView:(UITableView*)tableView
-numberOfRowsInSection:(NSInteger)section
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    return [[entrySvc retrieveAllEntries] count];
+
+    if ([[segue identifier] isEqualToString:@"loggedHours"])
+    {
+    
+    SecondViewController *destinationViewController =(SecondViewController *)segue.destinationViewController;
+        [destinationViewController ]
+            }
 }
 
--(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    static NSString*simpleTableIdentifier=@"SimpleTableItem";
-    UITableViewCell*cell= [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
-    if(cell==nil) {
-        cell=[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
-    }
-    Entry *entry=[[entrySvc retrieveAllEntries]
-                  objectAtIndex:indexPath.row];
-    cell.textLabel.text=[entry description];
-    return cell;
-}
 
+;
 @end

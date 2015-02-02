@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="pGm-GJ-lsP">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+    </dependencies>
+    <scenes>
+        <!--Logged Hours-->
+        <scene sceneID="Uiu-h8-P1F">
+            <objects>
+                <tableViewController id="huz-mf-q9N" customClass="LoggedHoursTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="vgg-X0-bX3">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="ListPrototypeCell" textLabel="7gh-Gr-EaW" style="IBUITableViewCellStyleDefault" id="u5j-Ib-sPm">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="u5j-Ib-sPm" id="6Gi-Fv-pBR">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Wake up" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="7gh-Gr-EaW">
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <sections/>
+                        <connections>
+                            <outlet property="dataSource" destination="huz-mf-q9N" id="hwS-SD-uBU"/>
+                            <outlet property="delegate" destination="huz-mf-q9N" id="qnz-AT-18t"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Logged Hours" id="8fD-Fz-jpN">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="crC-Kk-p9H">
+                            <connections>
+                                <segue destination="6gH-0V-pjB" kind="presentation" id="jrw-JY-RON"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LYb-tg-5NO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="245" y="128"/>
+        </scene>
+        <!--Add Entry-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="AddEntryViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Type" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aP5-WY-5pc">
+                                <rect key="frame" x="168" y="204" width="264" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="264" id="Cvm-F0-i3H"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="hEm-ky-FJK">
+                                <rect key="frame" x="0.0" y="319" width="600" height="162"/>
+                                <date key="date" timeIntervalSinceReferenceDate="444520642.52211499">
+                                    <!--2015-02-01 21:57:22 +0000-->
+                                </date>
+                            </datePicker>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Hours" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Bho-2i-dbt">
+                                <rect key="frame" x="255" y="263" width="90" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="90" id="pPH-Gw-fRo"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="hEm-ky-FJK" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="4Vj-RB-6sy"/>
+                            <constraint firstItem="Bho-2i-dbt" firstAttribute="top" secondItem="aP5-WY-5pc" secondAttribute="bottom" constant="29" id="SVA-13-6yh"/>
+                            <constraint firstItem="aP5-WY-5pc" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ZlX-jz-BXE"/>
+                            <constraint firstItem="Bho-2i-dbt" firstAttribute="centerX" secondItem="hEm-ky-FJK" secondAttribute="centerX" id="aOi-De-jLk"/>
+                            <constraint firstItem="aP5-WY-5pc" firstAttribute="centerX" secondItem="Bho-2i-dbt" secondAttribute="centerX" id="ho6-EH-vZA"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="hEm-ky-FJK" secondAttribute="bottom" constant="119" id="pfD-jr-2d7"/>
+                            <constraint firstItem="hEm-ky-FJK" firstAttribute="top" secondItem="Bho-2i-dbt" secondAttribute="bottom" constant="26" id="ygB-KE-eXX"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Add Entry" id="RSW-Za-8Ks">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="74i-hZ-2Yj">
+                            <connections>
+                                <segue destination="TOi-7x-wWi" kind="unwind" unwindAction="unwindLoggedHours:" id="FmV-hW-zhR"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="mQ8-54-yIT">
+                            <connections>
+                                <segue destination="TOi-7x-wWi" kind="unwind" unwindAction="unwindLoggedHours:" id="wqr-WY-VEq"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="saveButton" destination="mQ8-54-yIT" id="Tzs-Va-Hjm"/>
+                        <outlet property="textField" destination="aP5-WY-5pc" id="WTo-nZ-YbS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <exit id="TOi-7x-wWi" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="1763" y="136"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="qfX-bu-epB">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="pGm-GJ-lsP" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="uDF-OE-mdF">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="huz-mf-q9N" kind="relationship" relationship="rootViewController" id="H1s-76-NUi"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JhY-67-Km6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-567" y="128"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="eDx-uq-Nrf">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="6gH-0V-pjB" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="a4b-Cr-vkO">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="dN6-sc-ulo"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="v9e-Pb-VHS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="951" y="136"/>
+        </scene>
+    </scenes>
+</document>

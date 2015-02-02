@@ -7,10 +7,10 @@
 //
 
 #import "ViewController.h"
-
 #import "Entry.h"
 #import "EntrySvcCache.h"
-#import "EntrySvcCache.m"
+
+
 
 @interface ViewController ()
 
@@ -18,55 +18,49 @@
 
 @implementation ViewController
 
-EntrySvcCache *entrySvc = nil;
+EntrySvcCache *entrySvc =nil;
 
-
-- (void)viewDidLoad {
+-(void) viewDidLoad
+{
     [super viewDidLoad];
-    
     entrySvc = [[EntrySvcCache alloc] init];
-    // Do any additional setup after loading the view, typically from a nib.
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 
 - (IBAction)saveEntry:(id)sender {
-    NSLog (@"saveEntry:entering");
+    NSLog(@"saveEntry: entering");
     
-    [self.view endEditing: YES];
-    
-    Entry *entry =[[Entry alloc] init];
-    entry.type = _type.text;
-    entry.hours =_hours.text;
-    entry.date = _date.text;
+    [self.view endEditing:YES];
+    Entry *entry = [[Entry alloc] init];
+    entry.type=_type.text;
+    entry.hours=_hours.text;
+    entry.date=_date.text;
     [entrySvc createEntry:entry];
     
-    [self.tableView reloadData];
-    NSLog(@"saveEntry:entry saved");
+    NSLog(@"saveEntry: entry saved");
 }
 
 - (IBAction)deleteEntry:(id)sender {
-    NSLog (@"deleteEntry");
+    NSLog (@"deleteEntry:removing");
     
     [self.view endEditing:YES];
+    Entry *entry = [[Entry alloc] init];
+    entry.type=_type.text;
+    entry.hours=_hours.text;
+    entry.date=_date.text;
+    [entrySvc deleteEntry:entry];
     
+    NSLog(@"deleteEntry: entry removed");
 }
 
-
--(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-
-    if ([[segue identifier] isEqualToString:@"loggedHours"])
-    {
+//-(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+//{
+//if ([[segue identifier] isEqualToString:@"loggedHours"])
+//{
     
-    SecondViewController *destinationViewController =(SecondViewController *)segue.destinationViewController;
-        [destinationViewController ]
-            }
-}
+
+//}}
 
 
-;
+
 @end

@@ -7,14 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "SecondViewController.h"
+
 
 @interface ViewController : UIViewController
-
 @property (weak, nonatomic) IBOutlet UITextField *type;
 @property (weak, nonatomic) IBOutlet UITextField *hours;
 @property (weak, nonatomic) IBOutlet UITextField *date;
-@property (weak, nonatomic) IBOutlet UITableView *tableView;
 - (IBAction)saveEntry:(id)sender;
 - (IBAction)deleteEntry:(id)sender;
 

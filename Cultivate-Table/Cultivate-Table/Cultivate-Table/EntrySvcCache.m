@@ -30,10 +30,11 @@ NSMutableArray *entries = nil;
 }
 
 -(Entry*)updateEntry:(Entry*) entry{
-    return entry;
+     return entry;
 }
 
 -(Entry*)deleteEntry:(Entry*) entry{
+    [entries removeObject: entry];
     return entry;
 }
 

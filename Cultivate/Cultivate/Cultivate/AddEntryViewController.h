@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "LogEntry.h"
+#import "EntrySvcCache.h"
 
 @interface AddEntryViewController : UIViewController
 

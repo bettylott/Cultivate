@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import <XCTest/XCTest.h>
+#import "LogEntry.h"
+#import "EntrySvcArchive.h"
+
 
 @interface CultivateTests : XCTestCase
 
@@ -25,9 +28,19 @@
     [super tearDown];
 }
 
-- (void)testExample {
-    // This is an example of a functional test case.
-    XCTAssert(YES, @"Pass");
+- (void)testEntrySvcArchiver {
+    EntrySvcArchive *entrySvc = [[EntrySvcArchive alloc ] init];
+    int initialCount = [[entrySvc retrieveAllEntries] count];
+    
+    LogEntry*logEntry = [[LogEntry alloc] init];
+    logEntry.type = @"training";
+    logEntry.hours = @"4";
+
+    [entrySvc createEntry:(LogEntry*)logEntry];
+    int finalCount = [[entrySvc retrieveAllEntries] count];
+    
+    NSLog (@"***endingTestEntrySvcArchive***");
+    XCTAssertEqual(initialCount +1, finalCount,@"initial count %d, final count %d", initialCount, finalCount);
 }
 
 - (void)testPerformanceExample {

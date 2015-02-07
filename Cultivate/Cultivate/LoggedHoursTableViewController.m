@@ -9,6 +9,8 @@
 #import "LoggedHoursTableViewController.h"
 #import "LogEntry.h"
 #import "AddEntryViewController.h"
+//#import "EntrySvcCache.h"
+#import "EntrySvcArchive.h"
 
 @interface LoggedHoursTableViewController ()
 
@@ -19,19 +21,11 @@
 
 @implementation LoggedHoursTableViewController
 
+//EntrySvcCache *entrySvc= nil;
+EntrySvcArchive *entrySvc = nil;
+
 -(void)loadInitialData {
-    LogEntry *logEntry1 = [[LogEntry alloc] init];
-    logEntry1.type=@"training";
-    [self.logEntries addObject:logEntry1];
-    LogEntry *logEntry2 = [[LogEntry alloc] init];
-    logEntry2.type=@"coaching";
-    [self.logEntries addObject:logEntry2];
-    LogEntry *logEntry3 = [[LogEntry alloc] init];
-    logEntry3.type=@"observation";
-    [self.logEntries addObject:logEntry3];
-    LogEntry *logEntry4 = [[LogEntry alloc] init];
-    logEntry4.type=@"training";
-    [self.logEntries addObject:logEntry4];
+
     //sample data to test the protocols of the table view
     
 }
@@ -41,6 +35,7 @@
     
     AddEntryViewController *source =[segue sourceViewController];
     LogEntry *type = source.logEntry;
+
     
     if (type != nil){
         [self.logEntries addObject:type];
@@ -50,6 +45,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    entrySvc = [[EntrySvcArchive alloc] init];
     self.logEntries = [[NSMutableArray alloc] init];
     [self loadInitialData];
     
@@ -81,20 +77,20 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ListPrototypeCell" forIndexPath:indexPath];
     
     LogEntry *logEntry = [self.logEntries objectAtIndex:indexPath.row];
-    cell.textLabel.text = logEntry.type;
+    
+    cell.textLabel.text = [logEntry description];
+    
     return cell;
+    
 }
 
 
-/*
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
     // Return NO if you do not want the specified item to be editable.
     return YES;
 }
-*/
 
-/*
 // Override to support editing the table view.
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
@@ -104,7 +100,6 @@
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
     }   
 }
-*/
 
 /*
 // Override to support rearranging the table view.
@@ -119,6 +114,11 @@
     return YES;
 }
 */
+
+#pragma mark - Table view delegate
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
+}
 
 /*
 #pragma mark - Navigation

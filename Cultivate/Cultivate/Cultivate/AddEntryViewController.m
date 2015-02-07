@@ -10,6 +10,9 @@
 
 @interface AddEntryViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *textField;
+@property (weak, nonatomic) IBOutlet UITextField *hours;
+@property (weak, nonatomic) IBOutlet UIDatePicker *date;
+
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *saveButton;
 
 
@@ -34,7 +37,8 @@
     if (sender != self.saveButton) return;
     if (self.textField.text.length > 0){
         self.logEntry = [[LogEntry alloc] init];
-        self.logEntry.type = self.textField.text;
+        self.logEntry.type = _textField.text;
+        self.logEntry.hours = _hours.text;
     }
     
     

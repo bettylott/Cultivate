@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface LogEntry : NSObject
+@interface LogEntry : NSObject <NSCoding>
 
 @property NSString *type;
 //creates the property that will correspond to the type of hours (training, coaching, observation or other)

@@ -10,6 +10,8 @@
 		F80DE54B1A7EE31C00D8B815 /* LoggedHoursTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F80DE54A1A7EE31C00D8B815 /* LoggedHoursTableViewController.m */; };
 		F80DE54E1A7EE34400D8B815 /* AddEntryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F80DE54D1A7EE34400D8B815 /* AddEntryViewController.m */; };
 		F80DE5511A7EF19E00D8B815 /* LogEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = F80DE5501A7EF19E00D8B815 /* LogEntry.m */; };
+		F8537BE31A8672BB007A4D6E /* EntrySvcArchive.m in Sources */ = {isa = PBXBuildFile; fileRef = F8537BE21A8672BB007A4D6E /* EntrySvcArchive.m */; };
+		F8B19A1F1A83EA3B002ACB5A /* EntrySvcCache.m in Sources */ = {isa = PBXBuildFile; fileRef = F8B19A1E1A83EA3B002ACB5A /* EntrySvcCache.m */; };
 		F8D6A1D81A7ED746003694C2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F8D6A1D71A7ED746003694C2 /* main.m */; };
 		F8D6A1DB1A7ED746003694C2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F8D6A1DA1A7ED746003694C2 /* AppDelegate.m */; };
 		F8D6A1E11A7ED746003694C2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F8D6A1DF1A7ED746003694C2 /* Main.storyboard */; };
@@ -35,6 +37,11 @@
 		F80DE54D1A7EE34400D8B815 /* AddEntryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddEntryViewController.m; sourceTree = "<group>"; };
 		F80DE54F1A7EF19E00D8B815 /* LogEntry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogEntry.h; sourceTree = "<group>"; };
 		F80DE5501A7EF19E00D8B815 /* LogEntry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogEntry.m; sourceTree = "<group>"; };
+		F8537BE11A8672BB007A4D6E /* EntrySvcArchive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EntrySvcArchive.h; sourceTree = "<group>"; };
+		F8537BE21A8672BB007A4D6E /* EntrySvcArchive.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EntrySvcArchive.m; sourceTree = "<group>"; };
+		F8B19A1C1A83DE4C002ACB5A /* EntrySvc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EntrySvc.h; sourceTree = "<group>"; };
+		F8B19A1D1A83EA3B002ACB5A /* EntrySvcCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EntrySvcCache.h; sourceTree = "<group>"; };
+		F8B19A1E1A83EA3B002ACB5A /* EntrySvcCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EntrySvcCache.m; sourceTree = "<group>"; };
 		F8D6A1D21A7ED746003694C2 /* Cultivate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cultivate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8D6A1D61A7ED746003694C2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F8D6A1D71A7ED746003694C2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -71,6 +78,11 @@
 			children = (
 				F80DE54F1A7EF19E00D8B815 /* LogEntry.h */,
 				F80DE5501A7EF19E00D8B815 /* LogEntry.m */,
+				F8B19A1C1A83DE4C002ACB5A /* EntrySvc.h */,
+				F8B19A1D1A83EA3B002ACB5A /* EntrySvcCache.h */,
+				F8B19A1E1A83EA3B002ACB5A /* EntrySvcCache.m */,
+				F8537BE11A8672BB007A4D6E /* EntrySvcArchive.h */,
+				F8537BE21A8672BB007A4D6E /* EntrySvcArchive.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -241,6 +253,8 @@
 				F80DE5511A7EF19E00D8B815 /* LogEntry.m in Sources */,
 				F80DE54E1A7EE34400D8B815 /* AddEntryViewController.m in Sources */,
 				F80DE54B1A7EE31C00D8B815 /* LoggedHoursTableViewController.m in Sources */,
+				F8537BE31A8672BB007A4D6E /* EntrySvcArchive.m in Sources */,
+				F8B19A1F1A83EA3B002ACB5A /* EntrySvcCache.m in Sources */,
 				F8D6A1D81A7ED746003694C2 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -19,7 +19,7 @@ static NSString *const TYPE = @"type";
 static NSString *const HOURS =@"hours";
 static NSString *const LOGDATE =@"logDate";
 
--(NSString*) description {return [NSString stringWithFormat:@"%@%@", _type, _hours];
+-(NSString*) description {return [NSString stringWithFormat:@"%@%@%@", _type, _hours, _logDate];
 }
 
 - (void)encodeWithCoder:(NSCoder *)coder{

@@ -11,6 +11,10 @@
 		F80DE54E1A7EE34400D8B815 /* AddEntryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F80DE54D1A7EE34400D8B815 /* AddEntryViewController.m */; };
 		F80DE5511A7EF19E00D8B815 /* LogEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = F80DE5501A7EF19E00D8B815 /* LogEntry.m */; };
 		F8537BE31A8672BB007A4D6E /* EntrySvcArchive.m in Sources */ = {isa = PBXBuildFile; fileRef = F8537BE21A8672BB007A4D6E /* EntrySvcArchive.m */; };
+		F85B732F1A8B81AE001DC4BA /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F85B732E1A8B81AE001DC4BA /* libsqlite3.dylib */; };
+		F86262291A901A6400B532DD /* UpdateEntryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F86262281A901A6400B532DD /* UpdateEntryViewController.m */; };
+		F862622C1A905BFA00B532DD /* EntrySvcSQLite.m in Sources */ = {isa = PBXBuildFile; fileRef = F862622B1A905BFA00B532DD /* EntrySvcSQLite.m */; };
+		F86262301A91215400B532DD /* SQLiteTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F862622F1A91215400B532DD /* SQLiteTests.m */; };
 		F8B19A1F1A83EA3B002ACB5A /* EntrySvcCache.m in Sources */ = {isa = PBXBuildFile; fileRef = F8B19A1E1A83EA3B002ACB5A /* EntrySvcCache.m */; };
 		F8D6A1D81A7ED746003694C2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F8D6A1D71A7ED746003694C2 /* main.m */; };
 		F8D6A1DB1A7ED746003694C2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F8D6A1DA1A7ED746003694C2 /* AppDelegate.m */; };
@@ -39,6 +43,12 @@
 		F80DE5501A7EF19E00D8B815 /* LogEntry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogEntry.m; sourceTree = "<group>"; };
 		F8537BE11A8672BB007A4D6E /* EntrySvcArchive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EntrySvcArchive.h; sourceTree = "<group>"; };
 		F8537BE21A8672BB007A4D6E /* EntrySvcArchive.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EntrySvcArchive.m; sourceTree = "<group>"; };
+		F85B732E1A8B81AE001DC4BA /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		F86262271A901A6400B532DD /* UpdateEntryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UpdateEntryViewController.h; sourceTree = "<group>"; };
+		F86262281A901A6400B532DD /* UpdateEntryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UpdateEntryViewController.m; sourceTree = "<group>"; };
+		F862622A1A905BFA00B532DD /* EntrySvcSQLite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EntrySvcSQLite.h; sourceTree = "<group>"; };
+		F862622B1A905BFA00B532DD /* EntrySvcSQLite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EntrySvcSQLite.m; sourceTree = "<group>"; };
+		F862622F1A91215400B532DD /* SQLiteTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQLiteTests.m; sourceTree = "<group>"; };
 		F8B19A1C1A83DE4C002ACB5A /* EntrySvc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EntrySvc.h; sourceTree = "<group>"; };
 		F8B19A1D1A83EA3B002ACB5A /* EntrySvcCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EntrySvcCache.h; sourceTree = "<group>"; };
 		F8B19A1E1A83EA3B002ACB5A /* EntrySvcCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EntrySvcCache.m; sourceTree = "<group>"; };
@@ -60,6 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F85B732F1A8B81AE001DC4BA /* libsqlite3.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +94,8 @@
 				F8B19A1E1A83EA3B002ACB5A /* EntrySvcCache.m */,
 				F8537BE11A8672BB007A4D6E /* EntrySvcArchive.h */,
 				F8537BE21A8672BB007A4D6E /* EntrySvcArchive.m */,
+				F862622A1A905BFA00B532DD /* EntrySvcSQLite.h */,
+				F862622B1A905BFA00B532DD /* EntrySvcSQLite.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -90,6 +103,7 @@
 		F8D6A1C91A7ED746003694C2 = {
 			isa = PBXGroup;
 			children = (
+				F85B732E1A8B81AE001DC4BA /* libsqlite3.dylib */,
 				F8D6A1D41A7ED746003694C2 /* Cultivate */,
 				F8D6A1EE1A7ED746003694C2 /* CultivateTests */,
 				F8D6A1D31A7ED746003694C2 /* Products */,
@@ -114,6 +128,8 @@
 				F8D6A1DF1A7ED746003694C2 /* Main.storyboard */,
 				F80DE54C1A7EE34400D8B815 /* AddEntryViewController.h */,
 				F80DE54D1A7EE34400D8B815 /* AddEntryViewController.m */,
+				F86262271A901A6400B532DD /* UpdateEntryViewController.h */,
+				F86262281A901A6400B532DD /* UpdateEntryViewController.m */,
 				F80DE5491A7EE31C00D8B815 /* LoggedHoursTableViewController.h */,
 				F80DE54A1A7EE31C00D8B815 /* LoggedHoursTableViewController.m */,
 				F8D6A1E21A7ED746003694C2 /* Images.xcassets */,
@@ -145,6 +161,7 @@
 			isa = PBXGroup;
 			children = (
 				F8D6A1F01A7ED746003694C2 /* Info.plist */,
+				F862622F1A91215400B532DD /* SQLiteTests.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -251,10 +268,12 @@
 			files = (
 				F8D6A1DB1A7ED746003694C2 /* AppDelegate.m in Sources */,
 				F80DE5511A7EF19E00D8B815 /* LogEntry.m in Sources */,
+				F86262291A901A6400B532DD /* UpdateEntryViewController.m in Sources */,
 				F80DE54E1A7EE34400D8B815 /* AddEntryViewController.m in Sources */,
 				F80DE54B1A7EE31C00D8B815 /* LoggedHoursTableViewController.m in Sources */,
 				F8537BE31A8672BB007A4D6E /* EntrySvcArchive.m in Sources */,
 				F8B19A1F1A83EA3B002ACB5A /* EntrySvcCache.m in Sources */,
+				F862622C1A905BFA00B532DD /* EntrySvcSQLite.m in Sources */,
 				F8D6A1D81A7ED746003694C2 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -264,6 +283,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F8D6A1F21A7ED746003694C2 /* CultivateTests.m in Sources */,
+				F86262301A91215400B532DD /* SQLiteTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

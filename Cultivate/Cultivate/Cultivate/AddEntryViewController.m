@@ -11,7 +11,7 @@
 @interface AddEntryViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *textField;
 @property (weak, nonatomic) IBOutlet UITextField *hours;
-@property (weak, nonatomic) IBOutlet UIDatePicker *date;
+@property (weak, nonatomic) IBOutlet UITextField *date;
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *saveButton;
 
@@ -39,11 +39,17 @@
         self.logEntry = [[LogEntry alloc] init];
         self.logEntry.type = _textField.text;
         self.logEntry.hours = _hours.text;
+        self.logEntry.logDate = _date.text;
     }
     
     
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
 }
+
+
+    
+
+
 
 @end

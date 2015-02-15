@@ -30,6 +30,7 @@ NSMutableArray* logEntries = nil;
 }
 
 -(LogEntry*) updateEntry:(LogEntry*)entry{
+    [logEntries replaceObjectAtIndex:entry withObject:entry];
     return entry;
 }
 -(NSMutableArray*) retrieveAllEntries {

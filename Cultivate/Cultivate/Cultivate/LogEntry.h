@@ -16,7 +16,9 @@
 @property NSString *hours;
 //creates the property that will correspond to the logged hours
 
-@property  NSDate *logDate;
-//creates the property which will correspond to the date picker
+@property  NSString *logDate;
+//creates the property which will correspond to the date
+
+@property (nonatomic) NSInteger *id;
 
 @end

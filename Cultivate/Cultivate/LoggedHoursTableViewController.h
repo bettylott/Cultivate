@@ -10,7 +10,13 @@
 
 @interface LoggedHoursTableViewController : UITableViewController
 
+@property (nonatomic) int entryIdToEdit;
+
 - (IBAction) unwindLoggedHours:(UIStoryboardSegue*)segue;
 //segue to return to the table view after a button action is used
+
+- (IBAction)edit:(id)sender;
+
+
 
 @end

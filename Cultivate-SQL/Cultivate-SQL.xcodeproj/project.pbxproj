@@ -1,0 +1,451 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F86262431A91B76200B532DD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F86262421A91B76200B532DD /* main.m */; };
+		F86262461A91B76200B532DD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F86262451A91B76200B532DD /* AppDelegate.m */; };
+		F86262491A91B76200B532DD /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F86262481A91B76200B532DD /* ViewController.m */; };
+		F862624C1A91B76200B532DD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F862624A1A91B76200B532DD /* Main.storyboard */; };
+		F862624E1A91B76200B532DD /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F862624D1A91B76200B532DD /* Images.xcassets */; };
+		F86262511A91B76200B532DD /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F862624F1A91B76200B532DD /* LaunchScreen.xib */; };
+		F862625D1A91B76200B532DD /* Cultivate_SQLTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F862625C1A91B76200B532DD /* Cultivate_SQLTests.m */; };
+		F86262671A91B77700B532DD /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F86262661A91B77700B532DD /* libsqlite3.dylib */; };
+		F862626A1A91B83900B532DD /* DBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F86262691A91B83900B532DD /* DBManager.m */; };
+		F862626C1A93637300B532DD /* cultivate.sql in Resources */ = {isa = PBXBuildFile; fileRef = F862626B1A93637300B532DD /* cultivate.sql */; };
+		F862626F1A9366E900B532DD /* EditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F862626E1A9366E900B532DD /* EditViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F86262571A91B76200B532DD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F86262351A91B76200B532DD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F862623C1A91B76200B532DD;
+			remoteInfo = "Cultivate-SQL";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		F862623D1A91B76200B532DD /* Cultivate-SQL.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Cultivate-SQL.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F86262411A91B76200B532DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F86262421A91B76200B532DD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		F86262441A91B76200B532DD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		F86262451A91B76200B532DD /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		F86262471A91B76200B532DD /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		F86262481A91B76200B532DD /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		F862624B1A91B76200B532DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F862624D1A91B76200B532DD /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		F86262501A91B76200B532DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		F86262561A91B76200B532DD /* Cultivate-SQLTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Cultivate-SQLTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F862625B1A91B76200B532DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F862625C1A91B76200B532DD /* Cultivate_SQLTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Cultivate_SQLTests.m; sourceTree = "<group>"; };
+		F86262661A91B77700B532DD /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		F86262681A91B83900B532DD /* DBManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DBManager.h; path = ../DBManager.h; sourceTree = "<group>"; };
+		F86262691A91B83900B532DD /* DBManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DBManager.m; path = ../DBManager.m; sourceTree = "<group>"; };
+		F862626B1A93637300B532DD /* cultivate.sql */ = {isa = PBXFileReference; lastKnownFileType = file; name = cultivate.sql; path = ../cultivate.sql; sourceTree = "<group>"; };
+		F862626D1A9366E900B532DD /* EditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EditViewController.h; path = Add/EditViewController.h; sourceTree = "<group>"; };
+		F862626E1A9366E900B532DD /* EditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EditViewController.m; path = Add/EditViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F862623A1A91B76200B532DD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F86262671A91B77700B532DD /* libsqlite3.dylib in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F86262531A91B76200B532DD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F86262341A91B76200B532DD = {
+			isa = PBXGroup;
+			children = (
+				F862623F1A91B76200B532DD /* Cultivate-SQL */,
+				F86262591A91B76200B532DD /* Cultivate-SQLTests */,
+				F862623E1A91B76200B532DD /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F862623E1A91B76200B532DD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F862623D1A91B76200B532DD /* Cultivate-SQL.app */,
+				F86262561A91B76200B532DD /* Cultivate-SQLTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F862623F1A91B76200B532DD /* Cultivate-SQL */ = {
+			isa = PBXGroup;
+			children = (
+				F862626B1A93637300B532DD /* cultivate.sql */,
+				F862626D1A9366E900B532DD /* EditViewController.h */,
+				F862626E1A9366E900B532DD /* EditViewController.m */,
+				F86262661A91B77700B532DD /* libsqlite3.dylib */,
+				F86262681A91B83900B532DD /* DBManager.h */,
+				F86262691A91B83900B532DD /* DBManager.m */,
+				F86262441A91B76200B532DD /* AppDelegate.h */,
+				F86262451A91B76200B532DD /* AppDelegate.m */,
+				F86262471A91B76200B532DD /* ViewController.h */,
+				F86262481A91B76200B532DD /* ViewController.m */,
+				F862624A1A91B76200B532DD /* Main.storyboard */,
+				F862624D1A91B76200B532DD /* Images.xcassets */,
+				F862624F1A91B76200B532DD /* LaunchScreen.xib */,
+				F86262401A91B76200B532DD /* Supporting Files */,
+			);
+			path = "Cultivate-SQL";
+			sourceTree = "<group>";
+		};
+		F86262401A91B76200B532DD /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F86262411A91B76200B532DD /* Info.plist */,
+				F86262421A91B76200B532DD /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F86262591A91B76200B532DD /* Cultivate-SQLTests */ = {
+			isa = PBXGroup;
+			children = (
+				F862625C1A91B76200B532DD /* Cultivate_SQLTests.m */,
+				F862625A1A91B76200B532DD /* Supporting Files */,
+			);
+			path = "Cultivate-SQLTests";
+			sourceTree = "<group>";
+		};
+		F862625A1A91B76200B532DD /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F862625B1A91B76200B532DD /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F862623C1A91B76200B532DD /* Cultivate-SQL */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F86262601A91B76200B532DD /* Build configuration list for PBXNativeTarget "Cultivate-SQL" */;
+			buildPhases = (
+				F86262391A91B76200B532DD /* Sources */,
+				F862623A1A91B76200B532DD /* Frameworks */,
+				F862623B1A91B76200B532DD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Cultivate-SQL";
+			productName = "Cultivate-SQL";
+			productReference = F862623D1A91B76200B532DD /* Cultivate-SQL.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F86262551A91B76200B532DD /* Cultivate-SQLTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F86262631A91B76200B532DD /* Build configuration list for PBXNativeTarget "Cultivate-SQLTests" */;
+			buildPhases = (
+				F86262521A91B76200B532DD /* Sources */,
+				F86262531A91B76200B532DD /* Frameworks */,
+				F86262541A91B76200B532DD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F86262581A91B76200B532DD /* PBXTargetDependency */,
+			);
+			name = "Cultivate-SQLTests";
+			productName = "Cultivate-SQLTests";
+			productReference = F86262561A91B76200B532DD /* Cultivate-SQLTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F86262351A91B76200B532DD /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = "MSSE 650";
+				TargetAttributes = {
+					F862623C1A91B76200B532DD = {
+						CreatedOnToolsVersion = 6.1.1;
+					};
+					F86262551A91B76200B532DD = {
+						CreatedOnToolsVersion = 6.1.1;
+						TestTargetID = F862623C1A91B76200B532DD;
+					};
+				};
+			};
+			buildConfigurationList = F86262381A91B76200B532DD /* Build configuration list for PBXProject "Cultivate-SQL" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F86262341A91B76200B532DD;
+			productRefGroup = F862623E1A91B76200B532DD /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F862623C1A91B76200B532DD /* Cultivate-SQL */,
+				F86262551A91B76200B532DD /* Cultivate-SQLTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F862623B1A91B76200B532DD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F862626C1A93637300B532DD /* cultivate.sql in Resources */,
+				F862624C1A91B76200B532DD /* Main.storyboard in Resources */,
+				F86262511A91B76200B532DD /* LaunchScreen.xib in Resources */,
+				F862624E1A91B76200B532DD /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F86262541A91B76200B532DD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F86262391A91B76200B532DD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F86262491A91B76200B532DD /* ViewController.m in Sources */,
+				F86262461A91B76200B532DD /* AppDelegate.m in Sources */,
+				F86262431A91B76200B532DD /* main.m in Sources */,
+				F862626A1A91B83900B532DD /* DBManager.m in Sources */,
+				F862626F1A9366E900B532DD /* EditViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F86262521A91B76200B532DD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F862625D1A91B76200B532DD /* Cultivate_SQLTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F86262581A91B76200B532DD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F862623C1A91B76200B532DD /* Cultivate-SQL */;
+			targetProxy = F86262571A91B76200B532DD /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		F862624A1A91B76200B532DD /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F862624B1A91B76200B532DD /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		F862624F1A91B76200B532DD /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F86262501A91B76200B532DD /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F862625E1A91B76200B532DD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F862625F1A91B76200B532DD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F86262611A91B76200B532DD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "Cultivate-SQL/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		F86262621A91B76200B532DD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "Cultivate-SQL/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		F86262641A91B76200B532DD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Cultivate-SQLTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Cultivate-SQL.app/Cultivate-SQL";
+			};
+			name = Debug;
+		};
+		F86262651A91B76200B532DD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Cultivate-SQLTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Cultivate-SQL.app/Cultivate-SQL";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F86262381A91B76200B532DD /* Build configuration list for PBXProject "Cultivate-SQL" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F862625E1A91B76200B532DD /* Debug */,
+				F862625F1A91B76200B532DD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F86262601A91B76200B532DD /* Build configuration list for PBXNativeTarget "Cultivate-SQL" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F86262611A91B76200B532DD /* Debug */,
+				F86262621A91B76200B532DD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F86262631A91B76200B532DD /* Build configuration list for PBXNativeTarget "Cultivate-SQLTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F86262641A91B76200B532DD /* Debug */,
+				F86262651A91B76200B532DD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F86262351A91B76200B532DD /* Project object */;
+}

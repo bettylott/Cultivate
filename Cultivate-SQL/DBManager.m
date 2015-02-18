@@ -75,30 +75,31 @@
     if (prepareStatementResult == SQLITE_OK){
         
         if (!queryExecutable){
-            NSMutableArray *logEntriesRow;
+            NSMutableArray *arrDataRow;
             
             while (sqlite3_step(compiledStatement) == SQLITE_ROW){
-                logEntriesRow = [[NSMutableArray alloc] init];
+                arrDataRow = [[NSMutableArray alloc] init];
                 
                 int totalColumns = sqlite3_column_count(compiledStatement);
                 
                 for(int i=0; i<totalColumns; i++){
                     char *dbDataAsChars = (char*)sqlite3_column_text(compiledStatement, i);
+                    
                     if(dbDataAsChars != NULL){
-                        [logEntriesRow addObject: [NSString stringWithUTF8String:dbDataAsChars]];
+                        [arrDataRow addObject: [NSString stringWithUTF8String:dbDataAsChars]];
                     }
                     if (self.columnNames.count != totalColumns){
                         dbDataAsChars =(char*)sqlite3_column_name(compiledStatement, i);
                         [self.columnNames addObject:[NSString stringWithUTF8String:dbDataAsChars]];
                     }
                 }
-                if(logEntriesRow.count > 0){
-                    [self.arrResults addObject:logEntriesRow];
+                if(arrDataRow.count > 0){
+                    [self.arrResults addObject:arrDataRow];
                 }
             }
         }
         int executeQueryResults=sqlite3_step(compiledStatement);
-        if(executeQueryResults == SQLITE_OK){
+        if(executeQueryResults == SQLITE_DONE){
             self.affectedRows = sqlite3_changes(sqlite3Database);
             self.lastInsertRowId = sqlite3_last_insert_rowid(sqlite3Database);
         }

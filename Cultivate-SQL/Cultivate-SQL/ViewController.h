@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "EditViewController.h"
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController<UITableViewDelegate, UITableViewDataSource, EditViewControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tblEntries;
 

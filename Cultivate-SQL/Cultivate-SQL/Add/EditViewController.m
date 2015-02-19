@@ -13,6 +13,8 @@
 
 @property (nonatomic, strong) DBManager *dbManager;
 
+-(void)loadInfoToEdit;
+
 @end
 
 @implementation EditViewController
@@ -27,6 +29,10 @@
     self.date.delegate= self;
 
     self.dbManager = [[DBManager alloc] initWithDatabaseFilename:@"cultivate.sql"];
+    
+    if(self.recordIDToEdit!= -1){
+        [self loadInfoToEdit];
+    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -41,12 +47,20 @@
      
 -(IBAction)saveInfo:(id)sender{
     //preparation of the query string, input to perform query in database
-    NSString *query = [NSString stringWithFormat:@"INSERT INTO logEntry VALUES (null, '%@','%d', '%@');", self.type.text, [self.hours.text intValue], self.date.text];
+    NSString *query;
+    if(self.recordIDToEdit == -1){
+    query = [NSString stringWithFormat:@"INSERT INTO logEntry VALUES (null, '%@','%d', '%@');", self.type.text, [self.hours.text intValue], self.date.text];
+    }
+    else{
+        query =[NSString stringWithFormat:@"update logEntry set type ='%@', set hours = '%d', set logDate = '%@' where logEntry id=%d", self.type.text, [self.hours.text intValue], self.date.text, self.recordIDToEdit];
+    }
     
     [self.dbManager executeQuery:query];
     
     if(self.dbManager.affectedRows != 0){
         NSLog (@"Query was executed succesfully. Affected Rows = %d", self.dbManager.affectedRows);
+        
+        [self.delegate editInfoWasFinished];
         
         [self.navigationController popViewControllerAnimated:YES];
     }
@@ -54,6 +68,19 @@
         NSLog(@"Could not execute the query.");
     }
      }
+
+-(void)loadInfoToEdit{
+    NSString *query = [NSString stringWithFormat:@"select * from logEntry where logEntryID=%d", self.recordIDToEdit];
+    
+    NSArray *results = [[NSArray alloc] initWithArray:[self.dbManager loadDataFromDatabase:query]];
+    self.type.text=[[results objectAtIndex:0] objectAtIndex:[self.dbManager.columnNames indexOfObject:@"type"]];
+    self.hours.text=[[results objectAtIndex:0] objectAtIndex:[self.dbManager.columnNames indexOfObject:@"hours"]];
+    self.date.text =[[results objectAtIndex:0]objectAtIndex:[self.dbManager.columnNames indexOfObject:@"logDate"]];
+    
+                        
+}
+
+
 
 /*
 #pragma mark - Navigation

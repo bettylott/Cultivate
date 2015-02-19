@@ -8,7 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol EditViewControllerDelegate
+
+-(void)editInfoWasFinished;
+
+@end
+
 @interface EditViewController : UIViewController<UITextFieldDelegate>
+
+@property (nonatomic, strong) id<EditViewControllerDelegate> delegate;
 
 @property (weak, nonatomic) IBOutlet UITextField *type;
 
@@ -16,6 +24,7 @@
 
 @property (weak, nonatomic) IBOutlet UITextField *date;
 
+@property (nonatomic) int recordIDToEdit;
 
 -(IBAction)saveInfo:(id)sender;
 

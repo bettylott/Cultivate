@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="TcB-9C-2ol">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Cultivate Log-->
@@ -16,11 +17,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="3mk-mn-0I7">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="3mk-mn-0I7">
                                 <rect key="frame" x="0.0" y="34" width="600" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" accessoryType="detailDisclosureButton" indentationWidth="10" reuseIdentifier="idCellRecord" textLabel="Ln3-Zg-Y1P" detailTextLabel="pWP-Kk-jcn" rowHeight="60" style="IBUITableViewCellStyleSubtitle" id="VH7-d6-ATr">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="idCellRecord" textLabel="Ln3-Zg-Y1P" detailTextLabel="pWP-Kk-jcn" rowHeight="60" style="IBUITableViewCellStyleSubtitle" id="VH7-d6-ATr">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="VH7-d6-ATr" id="Gqp-qI-aao">
@@ -45,6 +46,12 @@
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="3mk-mn-0I7" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="34" id="73G-kn-M7S"/>
+                            <constraint firstItem="3mk-mn-0I7" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="99h-a1-37I"/>
+                            <constraint firstAttribute="trailing" secondItem="3mk-mn-0I7" secondAttribute="trailing" id="J2A-cg-CgN"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="3mk-mn-0I7" secondAttribute="bottom" constant="-34" id="kf7-R8-X55"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Cultivate Log" id="Fqg-iA-Wxo">
                         <barButtonItem key="backBarButtonItem" title="Go Back" id="giV-Zc-Pve"/>
@@ -56,7 +63,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="tblEntries" destination="3mk-mn-0I7" id="qzH-4i-S0I"/>
-                        <segue destination="JxF-FR-j0M" kind="show" identifier="idSegueEditInfo" id="khT-Vk-tW8"/>
+                        <segue destination="JxF-FR-j0M" kind="show" identifier="idSegueEditInfo" id="Hbh-ou-Qvx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -118,9 +125,9 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="date" destination="CGK-WW-bIs" id="CgI-xz-5kq"/>
-                        <outlet property="hours" destination="cgC-Cr-3F6" id="dRb-nr-1kq"/>
-                        <outlet property="type" destination="O81-US-TLX" id="Bxb-er-0Nk"/>
+                        <outlet property="date" destination="CGK-WW-bIs" id="a0o-By-MV2"/>
+                        <outlet property="hours" destination="cgC-Cr-3F6" id="aBI-cP-dC2"/>
+                        <outlet property="type" destination="O81-US-TLX" id="Ij6-We-ged"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dus-ck-TH6" userLabel="First Responder" sceneMemberID="firstResponder"/>

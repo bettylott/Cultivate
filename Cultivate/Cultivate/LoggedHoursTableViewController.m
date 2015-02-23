@@ -7,144 +7,149 @@
 //
 
 #import "LoggedHoursTableViewController.h"
-#import "LogEntry.h"
+#import "Entry.h"
 #import "AddEntryViewController.h"
-#import "UpdateEntryViewController.h"
-//#import "EntrySvcCache.h"
-//#import "EntrySvcArchive.h"
-#import "EntrySvcSQLite.h"
+#import "EntrySvcCoreData.h"
 
 @interface LoggedHoursTableViewController ()
-
-@property NSMutableArray *logEntries;
-//declares a Mutable Array to hold the properties of log entries
 
 @end
 
 @implementation LoggedHoursTableViewController
 
-//EntrySvcCache *entrySvc= nil;
-//EntrySvcArchive *entrySvc = nil;
-EntrySvcSQLite *entrySvc = nil;
+EntrySvcCoreData * entrySvcCD = nil;
 
-//-(void)loadInitialData {
-
-    //sample data to test the protocols of the table view
-    
-//}
-
--(IBAction) unwindLoggedHours:(UIStoryboardSegue *)segue{
-    //segue to move to table view after a button action
-    
-    //if (segue == addEntry){
-    AddEntryViewController *source =[segue sourceViewController];
-    LogEntry *type = source.logEntry;
-
-    
-    if (type != nil){
-        [self.logEntries addObject:type];
-        [self.tableView reloadData];
-   }
-    
-    //else if (segue == updateEntry);
-        //UpdateEntryViewController *source =[segue sourceViewController];
-       // LogEntry *type = source.logEntry;
-       // if(type !=nil){
-            //[self.description setDescription:type];
-      //  }//atttempting to tell the table view to unwind and pass the correct data to the tablevie from both the addEntry view controller and the updateEntryViewController
-}
-
-- (void)viewDidLoad {
+- (void) viewDidLoad{
     [super viewDidLoad];
-    //entrySvc = [[EntrySvcArchive alloc] init];
-    entrySvc = [[EntrySvcSQLite alloc] init];
-    self.logEntries = [[NSMutableArray alloc] init];
-    self.navigationItem.leftBarButtonItem = self.editButtonItem;
-    
-}
+    //entrySvc = [[EntrySvcCoreData alloc] init];
+    }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
+-(void) viewWillAppear:(BOOL)animated{
+    
+}
+
+-(void) viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    [self.tableView reloadData];
+}
+
 #pragma mark - Table view data source
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+
+    // Return the number of rows in the section.
+    NSArray *fetchedObjects = [[NSArray alloc]init];
+    [entrySvcCD retrieveAllEntries];
+    return fetchedObjects.count;
+    //Figure out how to return the number of fetched objects
+}
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
 
     // Return the number of sections.
     return 1;
     //with return one this will allow for one section
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-
-    // Return the number of rows in the section.
-    return [self.logEntries count];
-    //this will count the number of logs within the logEntries property
+    
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ListPrototypeCell" forIndexPath:indexPath];
     
-    LogEntry *logEntry = [self.logEntries objectAtIndex:indexPath.row];
+    //create cell from prototype
+    NSString *cellID = @"ListPrototypeCell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellID];
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellID];
+    }
     
-    cell.textLabel.text = [logEntry description];
+    //configure the cell
+    Entry *entry = [[entrySvcCD retrieveAllEntries] objectAtIndex:indexPath.row];
+    cell.textLabel.text = [NSString stringWithFormat:@"%@, %@ hours", entry.type, entry.hours];
+    cell.detailTextLabel.text = entry.date;
+        NSLog(@"created cell...");
     
     return cell;
+}
+
+
+
+
+#pragma mark - UITableViewDelegate
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    self.selectedItemIndex = indexPath;
+    
+    //perform segue to AddEntryViewControleer
+    [self performSegueWithIdentifier:@"updateEntry" sender:self];
+    
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    NSLog(@"ViewController::didSelectRowAtIndexPath -- Exiting...");
+}
+
+
+#pragma mark - Navigtion
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
+    // Get the new view controller using [segue destinationViewController].
+    
+    NSLog(@"prepare for segue from: %@",segue.identifier);
+    
+    // Check seque identifier
+    if ([segue.identifier isEqualToString:@"updateEntry"]){
+        
+        NSLog(@"prepareForSegue-update");
+        
+        Entry *entryToPass = [[entrySvcCD retrieveAllEntries] objectAtIndex:self.selectedItemIndex.row];
+        
+        NSLog([NSString stringWithFormat:@"selected = %@", entryToPass]);
+        
+        //Pass workout to the destination view controller
+        AddEntryViewController *addEntryVC = (AddEntryViewController *)[segue destinationViewController];
+        addEntryVC.selectedEntry = entryToPass;
+        
+    }else if ([segue.identifier isEqualToString:@"AddEntry"]){
+        NSLog(@"prepareForSegue-add");
+    
+        Entry *entryToPass = nil;
+        NSLog([NSString stringWithFormat:@"selected = %@", entryToPass]);
+        
+        //Pass nil
+        AddEntryViewController *addEntryVC = [segue destinationViewController];
+        addEntryVC.selectedEntry = entryToPass;
+        
+    }
+    
+    NSLog(@"prepareForSegue -- Exiting");
+}
+
+
+- (IBAction)addEntryButton:(id)sender {
+    NSLog(@"addEntryButton -- Entering...");
+    
+    //perform segue
+    [self performSegueWithIdentifier:@"addEntry" sender:self];
+    
+    NSLog(@"addEntryButton -- Exiting...");
     
 }
 
-
-
-
-// Override to support conditional editing of the table view.
-//(BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-  //  return YES;
-//}
-
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        
-        [self.logEntries removeObjectAtIndex: indexPath.row];//tells the table view what to remove
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-        
-    } //else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    //this function not used in this application
-   // }
-}
-
-
 /*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-#pragma mark - Table view delegate
-
  - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
     {
-    [self.logEntries replaceObjectAtIndex:indexPath.row withObject:[LogEntry description]];
+    Entry *entry = [[Entry alloc] init];
+        [entrySvc updateEntry:entry];
     }
 }
+
 #pragma mark - Navigation
 
-/*
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     UpdateEntryViewController *source =[segue sourceViewController];
      LogEntry *type = source.logEntry;
@@ -159,10 +164,7 @@ EntrySvcSQLite *entrySvc = nil;
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
 }
+
+
 */
-- (IBAction)edit:(id)sender {
-
-}
-
-
 @end

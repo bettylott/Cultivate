@@ -7,13 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "LogEntry.h"
+#import "Entry.h"
 
 @protocol EntrySvc <NSObject>
 
--(LogEntry*) createEntry:(LogEntry*)entry;
--(LogEntry*) updateEntry:(LogEntry*)entry;
--(LogEntry*) deleteEntry:(LogEntry*)entry;
--(NSMutableArray*) retrieveAllEntries;
+-(Entry*) createEntry:(Entry*)entry;
+-(Entry*) updateEntry:(Entry*)entry;
+-(Entry*) deleteEntry:(Entry*)entry;
+-(NSArray*) retrieveAllEntries;
 
 @end

@@ -7,16 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "EntrySvcCoreData.h"
 
 @interface LoggedHoursTableViewController : UITableViewController
 
-@property (nonatomic) int entryIdToEdit;
+@property (nonatomic) NSIndexPath *selectedItemIndex;
 
-- (IBAction) unwindLoggedHours:(UIStoryboardSegue*)segue;
-//segue to return to the table view after a button action is used
-
-- (IBAction)edit:(id)sender;
-
+- (IBAction)addEntryButton:(id)sender;
 
 
 @end

@@ -7,11 +7,28 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "LogEntry.h"
-#import "EntrySvcCache.h"
+#import "Entry.h"
+#import "EntrySvcCoreData.h"
+
 
 @interface AddEntryViewController : UIViewController
 
-@property LogEntry *logEntry;
+//text box properties
+@property (weak, nonatomic) IBOutlet UITextField *type;
+@property (weak, nonatomic) IBOutlet UITextField *hours;
+@property (weak, nonatomic) IBOutlet UITextField *date;
+
+@property (nonatomic) Entry *selectedEntry;
+           
+//button actions/handles
+- (IBAction)saveButton:(id)sender;
+@property (weak, nonatomic) IBOutlet UIButton *saveButtonHandle;
+- (IBAction)updateButton:(id)sender;
+@property (weak, nonatomic) IBOutlet UIButton *updateButtonHandel;
+- (IBAction)deleteButton:(id)sender;
+@property (weak, nonatomic) IBOutlet UIButton *deleteButtonHandle;
+
+//method for setting the properties of a passed entry
+-(void) setSelectedEntry:(Entry *)passedEntry;
 
 @end

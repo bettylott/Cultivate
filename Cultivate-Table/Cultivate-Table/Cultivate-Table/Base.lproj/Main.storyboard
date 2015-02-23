@@ -23,29 +23,44 @@
                                 <nil key="highlightedColor"/>
                                 <color key="shadowColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Update Hours" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yqn-We-hn6">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Update Hours" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yqn-We-hn6">
                                 <rect key="frame" x="246" y="117" width="108" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Jlh-aj-PKj">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Jlh-aj-PKj">
                                 <rect key="frame" x="240" y="161" width="120" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="t3u-qZ-K3D"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cAS-8d-2l4">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cAS-8d-2l4">
                                 <rect key="frame" x="240" y="205" width="120" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dbf-ne-qfa">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dbf-ne-qfa">
                                 <rect key="frame" x="240" y="248" width="120" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Jlh-aj-PKj" firstAttribute="leading" secondItem="cAS-8d-2l4" secondAttribute="leading" id="6al-Ho-ewT"/>
+                            <constraint firstItem="cAS-8d-2l4" firstAttribute="top" secondItem="Jlh-aj-PKj" secondAttribute="bottom" constant="14" id="8ib-rD-LPe"/>
+                            <constraint firstItem="cAS-8d-2l4" firstAttribute="trailing" secondItem="Jlh-aj-PKj" secondAttribute="trailing" id="L1s-fF-5Nd"/>
+                            <constraint firstItem="dbf-ne-qfa" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="Ry0-og-jbc"/>
+                            <constraint firstItem="cAS-8d-2l4" firstAttribute="trailing" secondItem="dbf-ne-qfa" secondAttribute="trailing" id="TAn-h9-oli"/>
+                            <constraint firstItem="Jlh-aj-PKj" firstAttribute="top" secondItem="Yqn-We-hn6" secondAttribute="bottom" constant="23" id="Ud4-M3-Ong"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="dbf-ne-qfa" secondAttribute="bottom" constant="322" id="YkT-0G-8Jl"/>
+                            <constraint firstItem="dbf-ne-qfa" firstAttribute="leading" secondItem="cAS-8d-2l4" secondAttribute="leading" id="e4u-hy-DX7"/>
+                            <constraint firstItem="Jlh-aj-PKj" firstAttribute="centerX" secondItem="Yqn-We-hn6" secondAttribute="centerX" id="rYa-8c-Jpf"/>
+                            <constraint firstItem="dbf-ne-qfa" firstAttribute="top" secondItem="cAS-8d-2l4" secondAttribute="bottom" constant="13" id="xGa-5C-JGq"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="date" destination="dbf-ne-qfa" id="Pyp-w4-Bbf"/>

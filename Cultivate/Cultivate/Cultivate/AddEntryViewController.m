@@ -7,48 +7,104 @@
 //
 
 #import "AddEntryViewController.h"
+#import "EntrySvcCoreData.h"
 
 @interface AddEntryViewController ()
-@property (weak, nonatomic) IBOutlet UITextField *textField;
-@property (weak, nonatomic) IBOutlet UITextField *hours;
-@property (weak, nonatomic) IBOutlet UITextField *date;
-
-@property (weak, nonatomic) IBOutlet UIBarButtonItem *saveButton;
-
 
 @end
 
 @implementation AddEntryViewController
 
+EntrySvcCoreData *entrySvc = nil;
+
+@synthesize selectedEntry;
+
+NSManagedObjectContext *context = nil;
+
+-(void) setSelectedEntry:(Entry *)passedEntry{
+    selectedEntry = passedEntry;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    self.type.text = self.selectedEntry.type;
+    self.hours.text = self.selectedEntry.hours;
+    self.date.text = self.selectedEntry.date;
+    
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+/*
+- (NSManagedObjectContext *)managedObjectContext {
+    NSManagedObjectContext *context = nil;
+    id delegate = [[UIApplication sharedApplication] delegate];
+    if ([delegate performSelector:@selector(managedObjectContext)]) {
+        context = [delegate managedObjectContext];
+    }
+    return context;
+}
+ */
+    
+- (IBAction)saveButton:(id)sender {
+    NSLog(@"saveButton Entering...");
+    
+    //dismiss keyboard
+    [self.view endEditing:YES];
+    
+    if([self.type.text length] != 0){
+        NSLog(@"after saveButton if statament");
+        
+        NSEntityDescription *entryNew = [NSEntityDescription insertNewObjectForEntityForName:@"Entry" inManagedObjectContext:context];
+        //entryNew.type = self.type.text;
+        //entryNew.hours = self.hours.text;
+        //entryNew.date = self.date.text;
+        [entryNew setValue:self.type.text forKey:@"type"];
+        [entryNew setValue:self.hours.text forKey:@"hours"];
+        [entryNew setValue:self.date.text forKey:@"date"];
+        }
+    NSLog(@"entry created -- Exiting...");
+    [self.navigationController popToRootViewControllerAnimated:YES];
+    }
 
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if (sender != self.saveButton) return;
-    if (self.textField.text.length > 0){
-        self.logEntry = [[LogEntry alloc] init];
-        self.logEntry.type = _textField.text;
-        self.logEntry.hours = _hours.text;
-        self.logEntry.logDate = _date.text;
+- (IBAction)updateButton:(id)sender {
+    NSLog(@"updateButton -- Entering...");
+    
+    //dismiss keyboard
+    [self.view endEditing:YES];
+    
+    Entry *entryUpdated = [[Entry alloc] init];
+    entryUpdated.type = self.type.text;
+    entryUpdated.hours = self.hours.text;
+    entryUpdated.date = self.date.text;
+    
+    if(selectedEntry.type != self.type.text){
+        //user is editing the workout name
+        [entrySvc deleteEntry:selectedEntry];
+        [entrySvc createEntry:entryUpdated];
+    }else{
+        //user is not editing the workout name
+        [entrySvc updateEntry:entryUpdated];
     }
     
+    NSLog(@"entry updated -- Exiting...");
+    [self.navigationController popToRootViewControllerAnimated:YES];
     
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
 }
 
-
-    
+- (IBAction)deleteButton:(id)sender {
+    NSLog(@"delete entry -- Entering...");
+    //dismiss keyboard
+    [self.view endEditing:YES];
+    [entrySvc deleteEntry:selectedEntry];
+    NSLog(@"entry deleted -- Exiting...");
+    [self.navigationController popToRootViewControllerAnimated:YES];
+}
 
 
 

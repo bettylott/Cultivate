@@ -9,19 +9,16 @@
 /* Begin PBXBuildFile section */
 		F80DE54B1A7EE31C00D8B815 /* LoggedHoursTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F80DE54A1A7EE31C00D8B815 /* LoggedHoursTableViewController.m */; };
 		F80DE54E1A7EE34400D8B815 /* AddEntryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F80DE54D1A7EE34400D8B815 /* AddEntryViewController.m */; };
-		F80DE5511A7EF19E00D8B815 /* LogEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = F80DE5501A7EF19E00D8B815 /* LogEntry.m */; };
-		F8537BE31A8672BB007A4D6E /* EntrySvcArchive.m in Sources */ = {isa = PBXBuildFile; fileRef = F8537BE21A8672BB007A4D6E /* EntrySvcArchive.m */; };
+		F847EE531A9989B800010C05 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F847EE511A9989B800010C05 /* Model.xcdatamodeld */; };
+		F847EE561A998A2A00010C05 /* EntrySvcCoreData.m in Sources */ = {isa = PBXBuildFile; fileRef = F847EE551A998A2A00010C05 /* EntrySvcCoreData.m */; };
+		F847EE591A998BB800010C05 /* Entry.m in Sources */ = {isa = PBXBuildFile; fileRef = F847EE581A998BB800010C05 /* Entry.m */; };
 		F85B732F1A8B81AE001DC4BA /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F85B732E1A8B81AE001DC4BA /* libsqlite3.dylib */; };
-		F86262291A901A6400B532DD /* UpdateEntryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F86262281A901A6400B532DD /* UpdateEntryViewController.m */; };
-		F862622C1A905BFA00B532DD /* EntrySvcSQLite.m in Sources */ = {isa = PBXBuildFile; fileRef = F862622B1A905BFA00B532DD /* EntrySvcSQLite.m */; };
-		F86262301A91215400B532DD /* SQLiteTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F862622F1A91215400B532DD /* SQLiteTests.m */; };
-		F8B19A1F1A83EA3B002ACB5A /* EntrySvcCache.m in Sources */ = {isa = PBXBuildFile; fileRef = F8B19A1E1A83EA3B002ACB5A /* EntrySvcCache.m */; };
+		F86262711A975E6600B532DD /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F86262701A975E6600B532DD /* CoreData.framework */; };
 		F8D6A1D81A7ED746003694C2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F8D6A1D71A7ED746003694C2 /* main.m */; };
 		F8D6A1DB1A7ED746003694C2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F8D6A1DA1A7ED746003694C2 /* AppDelegate.m */; };
 		F8D6A1E11A7ED746003694C2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F8D6A1DF1A7ED746003694C2 /* Main.storyboard */; };
 		F8D6A1E31A7ED746003694C2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8D6A1E21A7ED746003694C2 /* Images.xcassets */; };
 		F8D6A1E61A7ED746003694C2 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8D6A1E41A7ED746003694C2 /* LaunchScreen.xib */; };
-		F8D6A1F21A7ED746003694C2 /* CultivateTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F8D6A1F11A7ED746003694C2 /* CultivateTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,19 +36,15 @@
 		F80DE54A1A7EE31C00D8B815 /* LoggedHoursTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoggedHoursTableViewController.m; path = ../LoggedHoursTableViewController.m; sourceTree = "<group>"; };
 		F80DE54C1A7EE34400D8B815 /* AddEntryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddEntryViewController.h; sourceTree = "<group>"; };
 		F80DE54D1A7EE34400D8B815 /* AddEntryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddEntryViewController.m; sourceTree = "<group>"; };
-		F80DE54F1A7EF19E00D8B815 /* LogEntry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogEntry.h; sourceTree = "<group>"; };
-		F80DE5501A7EF19E00D8B815 /* LogEntry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogEntry.m; sourceTree = "<group>"; };
-		F8537BE11A8672BB007A4D6E /* EntrySvcArchive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EntrySvcArchive.h; sourceTree = "<group>"; };
-		F8537BE21A8672BB007A4D6E /* EntrySvcArchive.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EntrySvcArchive.m; sourceTree = "<group>"; };
+		F847EE521A9989B800010C05 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		F847EE541A998A2A00010C05 /* EntrySvcCoreData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EntrySvcCoreData.h; sourceTree = "<group>"; };
+		F847EE551A998A2A00010C05 /* EntrySvcCoreData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EntrySvcCoreData.m; sourceTree = "<group>"; };
+		F847EE571A998BB800010C05 /* Entry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Entry.h; path = ../Entry.h; sourceTree = "<group>"; };
+		F847EE581A998BB800010C05 /* Entry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Entry.m; path = ../Entry.m; sourceTree = "<group>"; };
 		F85B732E1A8B81AE001DC4BA /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
-		F86262271A901A6400B532DD /* UpdateEntryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UpdateEntryViewController.h; sourceTree = "<group>"; };
-		F86262281A901A6400B532DD /* UpdateEntryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UpdateEntryViewController.m; sourceTree = "<group>"; };
-		F862622A1A905BFA00B532DD /* EntrySvcSQLite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EntrySvcSQLite.h; sourceTree = "<group>"; };
-		F862622B1A905BFA00B532DD /* EntrySvcSQLite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EntrySvcSQLite.m; sourceTree = "<group>"; };
-		F862622F1A91215400B532DD /* SQLiteTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQLiteTests.m; sourceTree = "<group>"; };
+		F86262701A975E6600B532DD /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		F86262721A97604E00B532DD /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		F8B19A1C1A83DE4C002ACB5A /* EntrySvc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EntrySvc.h; sourceTree = "<group>"; };
-		F8B19A1D1A83EA3B002ACB5A /* EntrySvcCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EntrySvcCache.h; sourceTree = "<group>"; };
-		F8B19A1E1A83EA3B002ACB5A /* EntrySvcCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EntrySvcCache.m; sourceTree = "<group>"; };
 		F8D6A1D21A7ED746003694C2 /* Cultivate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cultivate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8D6A1D61A7ED746003694C2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F8D6A1D71A7ED746003694C2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -62,7 +55,6 @@
 		F8D6A1E51A7ED746003694C2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		F8D6A1EB1A7ED746003694C2 /* CultivateTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CultivateTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8D6A1F01A7ED746003694C2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F8D6A1F11A7ED746003694C2 /* CultivateTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CultivateTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F86262711A975E6600B532DD /* CoreData.framework in Frameworks */,
 				F85B732F1A8B81AE001DC4BA /* libsqlite3.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -87,15 +80,12 @@
 		F80DE5521A7F231800D8B815 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				F80DE54F1A7EF19E00D8B815 /* LogEntry.h */,
-				F80DE5501A7EF19E00D8B815 /* LogEntry.m */,
+				F847EE571A998BB800010C05 /* Entry.h */,
+				F847EE581A998BB800010C05 /* Entry.m */,
 				F8B19A1C1A83DE4C002ACB5A /* EntrySvc.h */,
-				F8B19A1D1A83EA3B002ACB5A /* EntrySvcCache.h */,
-				F8B19A1E1A83EA3B002ACB5A /* EntrySvcCache.m */,
-				F8537BE11A8672BB007A4D6E /* EntrySvcArchive.h */,
-				F8537BE21A8672BB007A4D6E /* EntrySvcArchive.m */,
-				F862622A1A905BFA00B532DD /* EntrySvcSQLite.h */,
-				F862622B1A905BFA00B532DD /* EntrySvcSQLite.m */,
+				F847EE511A9989B800010C05 /* Model.xcdatamodeld */,
+				F847EE541A998A2A00010C05 /* EntrySvcCoreData.h */,
+				F847EE551A998A2A00010C05 /* EntrySvcCoreData.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -103,6 +93,7 @@
 		F8D6A1C91A7ED746003694C2 = {
 			isa = PBXGroup;
 			children = (
+				F86262701A975E6600B532DD /* CoreData.framework */,
 				F85B732E1A8B81AE001DC4BA /* libsqlite3.dylib */,
 				F8D6A1D41A7ED746003694C2 /* Cultivate */,
 				F8D6A1EE1A7ED746003694C2 /* CultivateTests */,
@@ -128,8 +119,6 @@
 				F8D6A1DF1A7ED746003694C2 /* Main.storyboard */,
 				F80DE54C1A7EE34400D8B815 /* AddEntryViewController.h */,
 				F80DE54D1A7EE34400D8B815 /* AddEntryViewController.m */,
-				F86262271A901A6400B532DD /* UpdateEntryViewController.h */,
-				F86262281A901A6400B532DD /* UpdateEntryViewController.m */,
 				F80DE5491A7EE31C00D8B815 /* LoggedHoursTableViewController.h */,
 				F80DE54A1A7EE31C00D8B815 /* LoggedHoursTableViewController.m */,
 				F8D6A1E21A7ED746003694C2 /* Images.xcassets */,
@@ -144,6 +133,7 @@
 			children = (
 				F8D6A1D61A7ED746003694C2 /* Info.plist */,
 				F8D6A1D71A7ED746003694C2 /* main.m */,
+				F86262721A97604E00B532DD /* PrefixHeader.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -151,7 +141,6 @@
 		F8D6A1EE1A7ED746003694C2 /* CultivateTests */ = {
 			isa = PBXGroup;
 			children = (
-				F8D6A1F11A7ED746003694C2 /* CultivateTests.m */,
 				F8D6A1EF1A7ED746003694C2 /* Supporting Files */,
 			);
 			path = CultivateTests;
@@ -161,7 +150,6 @@
 			isa = PBXGroup;
 			children = (
 				F8D6A1F01A7ED746003694C2 /* Info.plist */,
-				F862622F1A91215400B532DD /* SQLiteTests.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -267,13 +255,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				F8D6A1DB1A7ED746003694C2 /* AppDelegate.m in Sources */,
-				F80DE5511A7EF19E00D8B815 /* LogEntry.m in Sources */,
-				F86262291A901A6400B532DD /* UpdateEntryViewController.m in Sources */,
 				F80DE54E1A7EE34400D8B815 /* AddEntryViewController.m in Sources */,
+				F847EE591A998BB800010C05 /* Entry.m in Sources */,
+				F847EE531A9989B800010C05 /* Model.xcdatamodeld in Sources */,
 				F80DE54B1A7EE31C00D8B815 /* LoggedHoursTableViewController.m in Sources */,
-				F8537BE31A8672BB007A4D6E /* EntrySvcArchive.m in Sources */,
-				F8B19A1F1A83EA3B002ACB5A /* EntrySvcCache.m in Sources */,
-				F862622C1A905BFA00B532DD /* EntrySvcSQLite.m in Sources */,
+				F847EE561A998A2A00010C05 /* EntrySvcCoreData.m in Sources */,
 				F8D6A1D81A7ED746003694C2 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -282,8 +268,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F8D6A1F21A7ED746003694C2 /* CultivateTests.m in Sources */,
-				F86262301A91215400B532DD /* SQLiteTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -399,6 +383,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = /Users/lisamatter/Documents/Cultivate/Cultivate/Cultivate/Cultivate/PrefixHeader.pch;
 				INFOPLIST_FILE = Cultivate/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -409,6 +395,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/PrefixHeader.pch";
 				INFOPLIST_FILE = Cultivate/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -480,6 +468,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		F847EE511A9989B800010C05 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				F847EE521A9989B800010C05 /* Model.xcdatamodel */,
+			);
+			currentVersion = F847EE521A9989B800010C05 /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = F8D6A1CA1A7ED746003694C2 /* Project object */;
 }

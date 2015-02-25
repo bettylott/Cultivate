@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>56389573-2E91-4D82-934F-FB02B50DEE92</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Cultivate Final</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>38E778D62E91CFE6D41CCEBADFD3356D4B7F864D</key>
+		<string>https://github.com/bettylott/Cultivate.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Cultivate Final/Cultivate Final.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>38E778D62E91CFE6D41CCEBADFD3356D4B7F864D</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/bettylott/Cultivate.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>38E778D62E91CFE6D41CCEBADFD3356D4B7F864D</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>38E778D62E91CFE6D41CCEBADFD3356D4B7F864D</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Cultivate</string>
+		</dict>
+	</array>
+</dict>
+</plist>

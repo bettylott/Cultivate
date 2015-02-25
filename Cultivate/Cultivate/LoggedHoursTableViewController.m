@@ -25,6 +25,15 @@ EntrySvcCoreData * entrySvcCD = nil;
 
 - (void) viewDidLoad{
     [super viewDidLoad];
+    AppDelegate *delegate = [UIApplication sharedApplication].delegate;
+    NSManagedObjectContext *context = [delegate managedObjectContext];
+    
+    NSLog (@"fetching object");
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:@"Entry"];
+    self.entries = [[context executeFetchRequest:fetchRequest error:nil] mutableCopy];
+    
+    NSLog (@"objects fetched");
+    [self.tableView reloadData];
     //entrySvc = [[EntrySvcCoreData alloc] init];
     }
 
@@ -39,21 +48,18 @@ EntrySvcCoreData * entrySvcCD = nil;
 
 -(void) viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
-    AppDelegate *delegate = [UIApplication sharedApplication].delegate;
-    NSManagedObjectContext *context = [delegate managedObjectContext];
-    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:@"Entry"];
-    self.entries = [[context executeFetchRequest:fetchRequest error:nil] mutableCopy];
-    
-    [self.tableView reloadData];
+   
 }
 
 #pragma mark - Table view data source
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 
     // Return the number of rows in the section.
+    NSLog (@"retrieving fetched objects");
     NSArray *fetchedObjects = [[NSArray alloc]init];
     [entrySvcCD retrieveAllEntries];
     return fetchedObjects.count;
+    NSLog (@"%lu objects fetched", (unsigned long)fetchedObjects.count);
     //Figure out how to return the number of fetched objects
 }
 

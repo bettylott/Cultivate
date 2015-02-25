@@ -31,4 +31,7 @@
 //method for setting the properties of a passed entry
 -(void) setSelectedEntry:(Entry *)passedEntry;
 
+//ManagedObject Context declaration
+@property (nonatomic,strong) NSManagedObjectContext* managedObjectContext;
+
 @end

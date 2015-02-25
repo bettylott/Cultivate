@@ -8,22 +8,20 @@
 
 #import "EntrySvcCoreData.h"
 #import <CoreData/CoreData.h>
+#import "AppDelegate.h"
 
 @implementation EntrySvcCoreData
-
-NSManagedObjectModel * model = nil;
-NSPersistentStoreCoordinator *psc = nil;
-NSManagedObjectContext *moc = nil;
 
 
 -(id) init{
     if (self = [super init]){
-        [self initializeCoreData];
+     //   [self initializeCoreData];
         return self;
     }
     return nil;
 }
 
+/* this is now all handled in appDelegate.m
 -(void) initializeCoreData{
     //load the schema model
     NSLog (@"initializing coreData model");
@@ -44,24 +42,21 @@ NSManagedObjectContext *moc = nil;
         NSLog(@"initialize CoreData FAILED with error %@", error);
     }
 }
-
-+ (Entry *) createManagedEntry {
-    
-    Entry *entry = [NSEntityDescription insertNewObjectForEntityForName:@"Entry" inManagedObjectContext:moc];
-    
-    return entry;
-    
-}
+*/
 
 -(Entry*) createManagedEntry{
+    AppDelegate *delegate = [UIApplication sharedApplication].delegate;
+    NSManagedObjectContext *context = [delegate managedObjectContext];
     
     Entry *entry =
-    [NSEntityDescription insertNewObjectForEntityForName:@"Entry" inManagedObjectContext:moc];
+    [NSEntityDescription insertNewObjectForEntityForName:@"Entry" inManagedObjectContext:context];
     
     return entry;
 }
 
 -(Entry*) createEntry:(Entry*)entry{
+    AppDelegate *delegate = [UIApplication sharedApplication].delegate;
+    NSManagedObjectContext *context = [delegate managedObjectContext];
     
     Entry *managedEntry =
     [self createManagedEntry];
@@ -69,36 +64,43 @@ NSManagedObjectContext *moc = nil;
     managedEntry.hours = entry.hours;
     managedEntry.date = entry.date;
     NSError *error;
-    if(![moc save:&error]){
+    if(![context save:&error]){
         NSLog(@"createEntry Error: %@", [error localizedDescription]);
     }
     return managedEntry;
 }
 
 -(NSArray*) retrieveAllEntries{
+    AppDelegate *delegate = [UIApplication sharedApplication].delegate;
+    NSManagedObjectContext *context = [delegate managedObjectContext];
     
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Entry" inManagedObjectContext:moc];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Entry" inManagedObjectContext:context];
     [fetchRequest setEntity:entity];
     NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"type" ascending:YES];
     [fetchRequest setSortDescriptors:@[sortDescriptor]];
     
     NSError *error;
-    NSArray *fetchedObjects = [moc executeFetchRequest:fetchRequest error:&error];
+    NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
     
     return fetchedObjects;
 }
 
 -(Entry*) updateEntry:(Entry*)entry{
+    
+    AppDelegate *delegate = [UIApplication sharedApplication].delegate;
+    NSManagedObjectContext *context = [delegate managedObjectContext];
     NSError *error;
-    if(![moc save:&error]){
+    if(![context save:&error]){
         NSLog(@"updateEntry Error: %@", [error localizedDescription]);
     }
     return entry;
 }
 
 -(Entry*) deleteEntry:(Entry*)entry{
-    [moc deleteObject:entry];
+    AppDelegate *delegate = [UIApplication sharedApplication].delegate;
+    NSManagedObjectContext *context = [delegate managedObjectContext];
+    [context deleteObject:entry];
     return entry;
 }
 

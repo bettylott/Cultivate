@@ -11,6 +11,5 @@
 
 @interface EntrySvcCoreData : NSObject<EntrySvc>
 
-+ (Entry *) createManagedEntry;
 
 @end

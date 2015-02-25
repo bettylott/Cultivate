@@ -8,6 +8,7 @@
 
 #import "AddEntryViewController.h"
 #import "EntrySvcCoreData.h"
+#import "AppDelegate.h"
 
 @interface AddEntryViewController ()
 
@@ -19,7 +20,6 @@ EntrySvcCoreData *entrySvc = nil;
 
 @synthesize selectedEntry;
 
-NSManagedObjectContext *context = nil;
 
 -(void) setSelectedEntry:(Entry *)passedEntry{
     selectedEntry = passedEntry;
@@ -51,7 +51,7 @@ NSManagedObjectContext *context = nil;
  */
     
 - (IBAction)saveButton:(id)sender {
-    NSLog(@"saveButton Entering...");
+    /*NSLog(@"saveButton Entering...");
     
     //dismiss keyboard
     [self.view endEditing:YES];
@@ -59,17 +59,40 @@ NSManagedObjectContext *context = nil;
     if([self.type.text length] != 0){
         NSLog(@"after saveButton if statament");
         
-        NSEntityDescription *entryNew = [NSEntityDescription insertNewObjectForEntityForName:@"Entry" inManagedObjectContext:context];
-        //entryNew.type = self.type.text;
-        //entryNew.hours = self.hours.text;
-        //entryNew.date = self.date.text;
-        [entryNew setValue:self.type.text forKey:@"type"];
-        [entryNew setValue:self.hours.text forKey:@"hours"];
-        [entryNew setValue:self.date.text forKey:@"date"];
+        Entry *entryNew = [[Entry alloc] init];
+        [entrySvc createEntry:entryNew ];
+       //NSEntityDescription *entryNew = [NSEntityDescription insertNewObjectForEntityForName:@"Entry" inManagedObjectContext:moc];
+        entryNew.type = self.type.text;
+        entryNew.hours = self.hours.text;
+        entryNew.date = self.date.text;
+        //[entryNew setValue:self.type.text forKey:@"type"];
+        //[entryNew setValue:self.hours.text forKey:@"hours"];
+        //[entryNew setValue:self.date.text forKey:@"date"];
         }
-    NSLog(@"entry created -- Exiting...");
+    */
+    
+    //dismiss keyboard
+    [self.view endEditing:YES];
+    
+    
+    AppDelegate *delegate = [UIApplication sharedApplication].delegate;
+    NSManagedObjectContext *context = [delegate managedObjectContext];
+    Entry *entryNew = [NSEntityDescription
+                                   insertNewObjectForEntityForName:@"Entry"
+                                   inManagedObjectContext:context];
+    [entrySvc createEntry:entryNew];
+    [entryNew setValue:self.type.text forKey:@"type"];
+    [entryNew setValue:self.hours.text forKey:@"hours"];
+    [entryNew setValue:self.date.text forKey:@"date"];
+    //NSError *error;
+    //if (![context save:&error]) {
+      //  NSLog(@"Error:%@", error);
+//}
+
+    NSLog(@"Data saved");
     [self.navigationController popToRootViewControllerAnimated:YES];
     }
+
 
 
 - (IBAction)updateButton:(id)sender {

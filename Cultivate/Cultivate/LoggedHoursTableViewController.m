@@ -10,14 +10,18 @@
 #import "Entry.h"
 #import "AddEntryViewController.h"
 #import "EntrySvcCoreData.h"
+#import "AppDelegate.h"
 
 @interface LoggedHoursTableViewController ()
+
+@property (strong) NSMutableArray *entries;
 
 @end
 
 @implementation LoggedHoursTableViewController
 
 EntrySvcCoreData * entrySvcCD = nil;
+
 
 - (void) viewDidLoad{
     [super viewDidLoad];
@@ -35,6 +39,11 @@ EntrySvcCoreData * entrySvcCD = nil;
 
 -(void) viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
+    AppDelegate *delegate = [UIApplication sharedApplication].delegate;
+    NSManagedObjectContext *context = [delegate managedObjectContext];
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:@"Entry"];
+    self.entries = [[context executeFetchRequest:fetchRequest error:nil] mutableCopy];
+    
     [self.tableView reloadData];
 }
 

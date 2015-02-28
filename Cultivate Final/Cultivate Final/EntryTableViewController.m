@@ -20,10 +20,11 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if ([[segue identifier] isEqualToString:@"UpdateEntry"]) {
+    if ([[segue identifier] isEqualToString:@"updateEntry"]) {
         NSManagedObject *selectedEntry = [self.entries objectAtIndex:[[self.tableView indexPathForSelectedRow] row]];
        ViewController *destViewController = segue.destinationViewController;
         destViewController.entry = selectedEntry;
+        NSLog (@"selecteEntry = %@, %@, %@", [selectedEntry valueForKey: @"type"], [selectedEntry valueForKey:@"hours"],[selectedEntry valueForKey:@"date"]);
     }
 }
 
@@ -84,7 +85,7 @@
     // self.clearsSelectionOnViewWillAppear = NO;
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    self.navigationItem.leftBarButtonItem = self.editButtonItem;
 }
 
 - (void)didReceiveMemoryWarning {

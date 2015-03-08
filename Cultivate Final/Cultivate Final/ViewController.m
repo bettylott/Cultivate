@@ -20,6 +20,9 @@
 @implementation ViewController
 
 @synthesize entry;
+int trainingHours;
+int changeTrainingHours;
+int newHours;
 
 -(BOOL)prefersStatusBarHidden{
     return YES;
@@ -34,6 +37,11 @@
     return context;
 }
 
+-(int) fetchTrainingHourTotal{
+    
+    return trainingHours;
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -45,7 +53,12 @@
         [self.hoursTextField setText:[self.entry valueForKey:@"hours"]];
         [self.dateTextField setText:[self.entry valueForKey:@"date"]];
         NSLog (@"Entry = %@, %@, %@", [self.entry valueForKey:@"type"],[self.entry valueForKey:@"hours"], [self.entry valueForKey:@"date"]);
+        
     }
+    
+    [self determineChangeTrainingHours];
+    NSString *convertHoursToString = [NSString stringWithFormat: @"%i", trainingHours];
+    [self.trainingTotalTextField setText: convertHoursToString];
     
 }
 
@@ -62,7 +75,12 @@
         [self.entry setValue:self.typeTextField.text forKey:@"type"];
         [self.entry setValue:self.hoursTextField.text forKey:@"hours"];
         [self.entry setValue:self.dateTextField.text forKey:@"date"];
+        NSLog (@"hours = %@", [self.entry valueForKey:@"hours"]);
         NSLog (@"updated entry sent to table");
+        
+        trainingHours = trainingHours + [[self.entry valueForKey:@"hours"] intValue];
+        NSString *convertHoursToString = [NSString stringWithFormat: @"%i", trainingHours];
+        [self.trainingTotalTextField setText: convertHoursToString];
     }
     
     else{
@@ -73,6 +91,12 @@
         [newEntry setValue:self.typeTextField.text forKey:@"type"];
         [newEntry setValue:self.hoursTextField.text forKey:@"hours"];
         [newEntry setValue:self.dateTextField.text forKey:@"date"];
+        newHours = [[newEntry valueForKey: @"hours"] intValue];
+        NSLog (@"newHours = %i", newHours);
+        
+        trainingHours = trainingHours + newHours;
+        NSString *convertHoursToString = [NSString stringWithFormat: @"%i", trainingHours];
+        [self.trainingTotalTextField setText: convertHoursToString];
         
         NSError *error = nil;
         // Save the object to persistent store
@@ -87,4 +111,22 @@
     NSLog (@"cancel button, back to table");
     [self dismissViewControllerAnimated:YES completion:nil];
 }
+
+-(int) determineChangeTrainingHours{
+    
+    changeTrainingHours =[[self.entry valueForKey:@"hours"] intValue];
+    
+    NSLog (@"changeTrainingHours = %i", changeTrainingHours);
+    NSLog (@"trainingHours %i", trainingHours);
+    
+    trainingHours = trainingHours - changeTrainingHours;
+    
+    NSLog (@"after equation trainingHours = %i", trainingHours);
+    
+    return trainingHours;
+}
+
+
+
+
 @end

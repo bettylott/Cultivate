@@ -68,7 +68,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Type" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KOG-Zg-260">
-                                <rect key="frame" x="210" y="78" width="181" height="30"/>
+                                <rect key="frame" x="210" y="54" width="181" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="181" id="grr-wy-L5f"/>
                                 </constraints>
@@ -76,7 +76,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Hours" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xXX-Wt-OfG">
-                                <rect key="frame" x="252" y="136" width="97" height="30"/>
+                                <rect key="frame" x="252" y="112" width="97" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="97" id="WKM-rG-y9D"/>
                                 </constraints>
@@ -84,13 +84,10 @@
                                 <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="MM/DD/YY" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2m7-p7-SP6">
-                                <rect key="frame" x="252" y="194" width="97" height="30"/>
+                                <rect key="frame" x="252" y="170" width="97" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
                             </textField>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tree pic.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="rSw-K5-XSi">
-                                <rect key="frame" x="83" y="260" width="435" height="312"/>
-                            </imageView>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YfC-3a-mT1" propertyAccessControl="none">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                 <items>
@@ -108,20 +105,34 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tree pic.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="rSw-K5-XSi">
+                                <rect key="frame" x="149" y="262" width="435" height="312"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Training Total" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IaK-Oc-5Rr">
+                                <rect key="frame" x="16" y="278" width="101" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="o3r-eA-OR5">
+                                <rect key="frame" x="16" y="312" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" red="0.42733821142338158" green="0.89283532733085003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="YfC-3a-mT1" secondAttribute="trailing" id="1Rs-lV-UyV"/>
-                            <constraint firstItem="rSw-K5-XSi" firstAttribute="centerX" secondItem="2m7-p7-SP6" secondAttribute="centerX" id="5Tg-xE-dxa"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="2m7-p7-SP6" secondAttribute="bottom" constant="376" id="5sc-qF-dug"/>
-                            <constraint firstItem="rSw-K5-XSi" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="67" id="86M-16-anl"/>
-                            <constraint firstItem="rSw-K5-XSi" firstAttribute="top" secondItem="2m7-p7-SP6" secondAttribute="bottom" constant="36" id="C6b-3w-nac"/>
+                            <constraint firstItem="rSw-K5-XSi" firstAttribute="centerX" secondItem="2m7-p7-SP6" secondAttribute="centerX" constant="66" id="5Tg-xE-dxa"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="2m7-p7-SP6" secondAttribute="bottom" constant="400" id="5sc-qF-dug"/>
+                            <constraint firstItem="rSw-K5-XSi" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="133" id="86M-16-anl"/>
+                            <constraint firstItem="rSw-K5-XSi" firstAttribute="top" secondItem="2m7-p7-SP6" secondAttribute="bottom" constant="62" id="C6b-3w-nac"/>
                             <constraint firstItem="YfC-3a-mT1" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="FTP-aF-905"/>
                             <constraint firstItem="2m7-p7-SP6" firstAttribute="top" secondItem="xXX-Wt-OfG" secondAttribute="bottom" constant="28" id="G4U-xP-eJY"/>
                             <constraint firstItem="xXX-Wt-OfG" firstAttribute="top" secondItem="KOG-Zg-260" secondAttribute="bottom" constant="28" id="GD6-A8-64N"/>
                             <constraint firstItem="xXX-Wt-OfG" firstAttribute="trailing" secondItem="2m7-p7-SP6" secondAttribute="trailing" id="WlG-Q8-awU"/>
                             <constraint firstItem="xXX-Wt-OfG" firstAttribute="leading" secondItem="2m7-p7-SP6" secondAttribute="leading" id="aaV-ea-0td"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="rSw-K5-XSi" secondAttribute="bottom" constant="28" id="crc-Sg-KIc"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="rSw-K5-XSi" secondAttribute="bottom" constant="26" id="crc-Sg-KIc"/>
                             <constraint firstItem="YfC-3a-mT1" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="eXv-Cz-ok4"/>
                             <constraint firstItem="xXX-Wt-OfG" firstAttribute="centerX" secondItem="KOG-Zg-260" secondAttribute="centerX" id="l3p-HI-4Gb"/>
                             <constraint firstItem="YfC-3a-mT1" firstAttribute="centerX" secondItem="KOG-Zg-260" secondAttribute="centerX" id="wAp-D0-0sx"/>
@@ -130,12 +141,14 @@
                     <connections>
                         <outlet property="dateTextField" destination="2m7-p7-SP6" id="08m-dn-Dy6"/>
                         <outlet property="hoursTextField" destination="xXX-Wt-OfG" id="bbK-L3-ZCy"/>
+                        <outlet property="trainingTotalLabel" destination="IaK-Oc-5Rr" id="WIE-2F-gJH"/>
+                        <outlet property="trainingTotalTextField" destination="o3r-eA-OR5" id="8mH-iD-A2n"/>
                         <outlet property="typeTextField" destination="KOG-Zg-260" id="4tx-ED-cqC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1191" y="176"/>
+            <point key="canvasLocation" x="1216" y="176"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="aTx-uQ-xPD">

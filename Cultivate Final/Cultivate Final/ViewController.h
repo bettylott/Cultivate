@@ -17,6 +17,9 @@
 
 @property (strong) NSManagedObject *entry;
 
+@property (weak, nonatomic) IBOutlet UILabel *trainingTotalLabel;
+
+@property (weak, nonatomic) IBOutlet UITextField *trainingTotalTextField;
 
 - (IBAction)saveButton:(id)sender;
 
